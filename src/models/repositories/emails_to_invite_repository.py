@@ -9,34 +9,22 @@ class EmailsToInviteRepository:
         cursor = self.__conn.cursor()
         cursor.execute(
             '''
-                INSERT INTO email_to_invite 
+                INSERT INTO emails_to_invite
                     (id, trip_id, email)
-                values
+                VALUES
                     (?, ?, ?)
             ''', (
                 email_infos["id"],
                 email_infos["trip_id"],
                 email_infos["email"],
-    
             )
         )
         self.__conn.commit()
-    def find_email_from_trip(self, trip_id: str) -> List[Tuple]:
+
+    def find_emails_from_trip(self, trip_id: str) -> List[Tuple]:
         cursor = self.__conn.cursor()
         cursor.execute(
-            '''SELECT * FROM trips WHERE trip_id = ? ''', (trip_id,)
+            '''SELECT * FROM emails_to_invite WHERE trip_id = ?''', (trip_id,)
         )
         trip = cursor.fetchall()
         return trip
-    def update_trip_status(self, trip_id: str) -> None:
-         cursor = self.__conn.cursor()
-         cursor.execute(
-            '''
-                UPDATE trips
-                    SET status = 1
-                WHERE
-                    id = ?
-            ''', (trip_id,)
-
-         )
-         self.__conn.commit()
