@@ -28,3 +28,4 @@ class EmailsToInviteRepository:
         )
         trip = cursor.fetchall()
         return trip
+    
