@@ -5,6 +5,7 @@ trips_routes_bp = Blueprint("trip_routes", __name__)
 #Importação de Controllers
 
 from src.controllers.trip_creator import TripCreator
+from src.controllers.trip_finder import TripFinder
 
 #Importação de Repositorios 
 
@@ -27,7 +28,15 @@ def create_trip():
 
     return jsonify(response["body"]), response["status_code"]
     
+@trips_routes_bp.route("/trips/<tripId>", methods=["GET"])
+def find_trip(tripId):
+    conn = db_connection_handler.get_connection()
+    trips_repository = TripsRepository(conn)
+    controller = TripFinder(trips_repository)
 
+    response = controller.find_trip_details(tripId)
+
+    return jsonify(response["body"]), response["status_code"]
 
 
 
