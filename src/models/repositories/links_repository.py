@@ -1,7 +1,7 @@
 from typing import Dict, Tuple, List
 from sqlite3 import Connection
 
-class LinkRepository:
+class LinksRepository:
     def __init__(self, conn: Connection) -> None:
         self.__conn = conn
 
@@ -29,4 +29,3 @@ class LinkRepository:
         )
         links = cursor.fetchall()
         return links
-    

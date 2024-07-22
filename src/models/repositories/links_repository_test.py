@@ -1,10 +1,10 @@
 import pytest # type: ignore
 import uuid
-from .links_repository_test import LinksRepository
+from .links_repository import LinksRepository
 from src.models.settings.db_connection_handler import db_connection_handler
 
-
 db_connection_handler.connect()
+
 link_id = str(uuid.uuid4())
 trip_id = str(uuid.uuid4())
 
