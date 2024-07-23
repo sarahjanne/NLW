@@ -29,10 +29,10 @@ CREATE TABLE IF NOT EXISTS 'participants' (
     FOREIGN KEY (trip_id) REFERENCES trips(id),   
      FOREIGN KEY (emails_to_invite_id) REFERENCES emails_to_invite(id)
 );
-CREATE TABLE IF NOT EXISTS 'activities' (    i
-d TEXT PRIMARY KEY,
-    trip_id TEXT NOT NULL,    
+CREATE TABLE IF NOT EXISTS 'activities' (
+    id TEXT PRIMARY KEY,
+    trip_id TEXT NOT NULL,
     title TEXT NOT NULL,
-    occurs_at DATETIME,    
+    occurs_at DATETIME,
     FOREIGN KEY (trip_id) REFERENCES trips(id)
 );
