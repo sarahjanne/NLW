@@ -1,0 +1,25 @@
+#1º email gerado
+{'status': 'success', 'user': 'sq7x35cbgorbe6km@ethereal.email', 
+'pass': 'GgNzfq9uFZkWbnd5Kh', 'smtp': {'host': 'smtp.ethereal.email', 'port': 587, 
+'secure': False}, 'imap': {'host': 'imap.ethereal.email', 'port': 993, 'secure': True}, 
+'pop3': {'host': 'pop3.ethereal.email', 'port': 995, 'secure': True},
+ 'web': 'https://ethereal.email', 'mxEnabled': False}
+
+
+#from email.mime.multipart import MIMEMultipart
+#from email.mime.text import MIMEText
+ A importação das classes MIMEMultipart e MIMEText do módulo email.mime.multipart e email.mime.text, respectivamente, são utilizadas para criar e manipular mensagens de e-mail no formato MIME (Multipurpose Internet Mail Extensions) em Python. Aqui está uma explicação do que cada uma faz:
+
+MIMEMultipart: Esta classe é usada para criar mensagens de e-mail que podem conter 
+múltiplas partes. Essas partes podem ser diferentes tipos de conteúdo, como texto, HTML,
+ anexos, etc. Basicamente, ela permite a criação de e-mails complexos com várias partes 
+ distintas.
+
+Por exemplo, você pode ter um e-mail que contenha uma parte de texto simples, uma parte
+ em HTML e um anexo, tudo na mesma mensagem de e-mail. O MIMEMultipart permite combinar
+  essas diferentes partes em uma única mensagem.
+MIMEText: Esta classe é usada para criar uma única parte de mensagem de e-mail contendo 
+texto. Pode ser utilizado para criar partes de texto simples (plain text) ou HTML.
+
+Por exemplo, se você deseja enviar um e-mail que contenha apenas texto simples ou HTML, 
+você usaria MIMEText para criar o conteúdo da mensagem.
